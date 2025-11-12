@@ -23,8 +23,8 @@ export default tseslint.config(js.configs.recommended, ...tseslint.configs.recom
   },
   settings: {
     react: {
-      version: "detect"
-    }
+      version: "detect",
+    },
   },
   ignores: ["node_modules", "build", "storybook-static"],
 });
