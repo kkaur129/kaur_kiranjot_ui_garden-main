@@ -3,7 +3,7 @@ import tseslint from "typescript-eslint";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactPlugin from "eslint-plugin-react";
 import prettier from "eslint-config-prettier";
-
+// eslint.config.js
 export default tseslint.config(js.configs.recommended, ...tseslint.configs.recommended, prettier, {
   files: ["**/*.{js,jsx,ts,tsx}"],
   languageOptions: {
