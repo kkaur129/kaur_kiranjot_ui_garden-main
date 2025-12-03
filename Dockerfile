@@ -1,24 +1,13 @@
-
-FROM node:20-alpine AS builder
-
-WORKDIR /kaur_kiranjot_ui_garden
-
+FROM node:18-alpine AS build
+WORKDIR /app
 COPY package*.json ./
-
-RUN npm ci --legacy-peer-deps
-
+RUN npm install
 COPY . .
-
-RUN npm run build-storybook
+RUN npm run build
 
 FROM nginx:alpine
-
+WORKDIR /kaur_kiranjot_final_site
+COPY --from=build /app/build /kaur_kiranjot_final_site
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-COPY --from=builder /kaur_kiranjot_ui_garden/storybook-static /usr/share/nginx/html
-
-EXPOSE 8018
-
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 CMD wget --quiet --tries=1 --spider http://localhost:8018/ || exit 1
-
+EXPOSE 5575
 CMD ["nginx", "-g", "daemon off;"]
