@@ -30,10 +30,18 @@ function Navbar() {
     <nav className="navbar">
       <h1 className="logo">Kaur's UI Garden</h1>
       <ul className="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="#home">Home</a>
+        </li>
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+        <li>
+          <a href="#skills">Skills</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
       </ul>
     </nav>
   );
@@ -44,7 +52,8 @@ function Hero() {
     <section className="hero" id="home">
       <h2>Welcome to My Creative Space</h2>
       <p>
-        I design and build beautiful, user-friendly web interfaces powered by React and modern web tools.
+        I design and build beautiful, user-friendly web interfaces powered by React and modern web
+        tools.
       </p>
       <button className="primary-btn">Explore My Work</button>
     </section>
